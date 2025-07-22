@@ -5,21 +5,21 @@ const malla = [
             {
                 semester: "1º Semestre",
                 courses: [
-                    { code: "FIS101", name: "Física I", credits: 5, prereqs: [] },
-                    { code: "ALG101", name: "Álgebra I", credits: 5, prereqs: [] },
-                    { code: "CAL101", name: "Cálculo I", credits: 5, prereqs: [] },
-                    { code: "QUI101", name: "Química I", credits: 5, prereqs: [] },
-                    { code: "COM101", name: "Inglés Comunicativo I", credits: 3, prereqs: [] }
+                    { code: "510140", name: "Física I", credits: 4, prereqs: [] },
+                    { code: "525140", name: "Álgebra I", credits: 5, prereqs: [] },
+                    { code: "527140", name: "Cálculo I", credits: 5, prereqs: [] },
+                    { code: "531140", name: "Química General I", credits: 5, prereqs: [] },
+                    { code: "540120", name: "Introducción a la Ingeniería Química", credits: 2, prereqs: [] }
                 ]
             },
             {
                 semester: "2º Semestre",
                 courses: [
-                    { code: "FIS102", name: "Física II", credits: 5, prereqs: ["FIS101"] },
-                    { code: "ALG102", name: "Álgebra II", credits: 5, prereqs: ["ALG101"] },
-                    { code: "CAL102", name: "Cálculo II", credits: 5, prereqs: ["CAL101"] },
-                    { code: "QUI102", name: "Química II", credits: 5, prereqs: ["QUI101"] },
-                    { code: "ING101", name: "Introducción a la Ingeniería Química", credits: 3, prereqs: [] }
+                    { code: "510150", name: "Física II", credits: 4, prereqs: ["510140"] },
+                    { code: "525150", name: "Álgebra II", credits: 5, prereqs: ["525140"] },
+                    { code: "527150", name: "Cálculo II", credits: 5, prereqs: ["527140"] },
+                    { code: "531150", name: "Química General II", credits: 4, prereqs: ["531140"] },
+                    { code: "500151", name: "Introducción a la Innovación en Ingeniería", credits: 2, prereqs: [] }
                 ]
             }
         ]
@@ -30,21 +30,22 @@ const malla = [
             {
                 semester: "3º Semestre",
                 courses: [
-                    { code: "CAL201", name: "Cálculo III", credits: 5, prereqs: ["ALG102", "CAL102"] },
-                    { code: "EDO201", name: "Ecuaciones Diferenciales Ordinarias", credits: 4, prereqs: ["ALG102", "CAL102"] },
-                    { code: "MEC201", name: "Mecánica", credits: 5, prereqs: ["FIS102", "CAL102"], coreqs: ["CAL201"] },
-                    { code: "BAL201", name: "Balance de Materia y Energía", credits: 5, prereqs: ["QUI102"] },
-                    { code: "COM102", name: "Inglés Comunicativo II", credits: 3, prereqs: ["COM101"] }
+                    { code: "521227", name: "Cálculo III", credits: 5, prereqs: ["525150", "527150"] },
+                    { code: "521218", name: "Ecuaciones Diferenciales Ordinarias", credits: 4, prereqs: ["525150", "527150"] },
+                    { code: "541225", name: "Mecánica", credits: 4, prereqs: ["510150", "527150"], coreqs: ["521227"] },
+                    { code: "540215", name: "Balance de Materia y Energía", credits: 4, prereqs: ["531150"] },
+                    { code: "503202", name: "Programación", credits: 3, prereqs: [] },
+                    { code: "201", name: "Complementaria I", credits: 3, prereqs: [] }
                 ]
             },
             {
                 semester: "4º Semestre",
                 courses: [
-                    { code: "TER201", name: "Termodinámica", credits: 5, prereqs: ["FIS102", "ALG102", "CAL102", "BAL201"] },
-                    { code: "MF201", name: "Mecánica de Fluidos", credits: 5, prereqs: ["CAL201", "EDO201", "MEC201"] },
-                    { code: "TIN201", name: "Taller de Integración I", credits: 3, prereqs: ["BAL201"] },
-                    { code: "NUM201", name: "Cálculo Numérico", credits: 4, prereqs: ["CAL201", "EDO201", "PRG201"] },
-                    { code: "PRG201", name: "Programación", credits: 3, prereqs: [] }
+                    { code: "540264", name: "Termodinámica", credits: 4, prereqs: ["510150", "525150", "527150", "540215"] },
+                    { code: "540265", name: "Mecánica de Fluidos", credits: 5, prereqs: ["521227", "521218", "541225"] },
+                    { code: "540266", name: "Taller de Integración I", credits: 2, prereqs: ["540215"] },
+                    { code: "521230", name: "Cálculo Numérico", credits: 4, prereqs: ["521227", "521218", "503202"] },
+                    { code: "202", name: "Complementaria II", credits: 6, prereqs: [] }
                 ]
             }
         ]
@@ -55,20 +56,23 @@ const malla = [
             {
                 semester: "5º Semestre",
                 courses: [
-                    { code: "QUI301", name: "Química Orgánica", credits: 5, prereqs: ["QUI102"] },
-                    { code: "TER301", name: "Termodinámica de Mezclas", credits: 5, prereqs: ["TER201"] },
-                    { code: "TC301", name: "Transferencia de Calor", credits: 5, prereqs: ["MF201"] },
-                    { code: "EST301", name: "Estadística y Probabilidades", credits: 4, prereqs: ["ALG102", "CAL102"] },
-                    { code: "COM103", name: "Inglés Comunicativo III", credits: 3, prereqs: ["COM102"] }
+                    { code: "540331", name: "Química Orgánica", credits: 4, prereqs: ["531150"] },
+                    { code: "540332", name: "Termodinámica de Mezclas", credits: 4, prereqs: ["540264"] },
+                    { code: "540333", name: "Transferencia de Calor", credits: 4, prereqs: ["540265"] },
+                    { code: "540334", name: "Liderazgo y Comunicación", credits: 3, prereqs: [] },
+                    { code: "540349", name: "Práctica Laboral", credits: 2, prereqs: [] },
+                    { code: "203", name: "Complementaria III", credits: 2, prereqs: [] }
                 ]
             },
             {
                 semester: "6º Semestre",
                 courses: [
-                    { code: "TS301", name: "Termodinámica de Superficies", credits: 5, prereqs: ["MF201", "TER301"], coreqs: ["TM301"] },
-                    { code: "TM301", name: "Transferencia de Materia", credits: 5, prereqs: ["TER301"] },
-                    { code: "TIN302", name: "Taller de Integración II", credits: 3, prereqs: ["TC301"] },
-                    { code: "DRQ301", name: "Diseño de Reactores Químicos", credits: 5, prereqs: ["TS301"] }
+                    { code: "540351", name: "Termodinámica de Superficies", credits: 4, prereqs: ["540265", "540332"], coreqs: ["540352"] },
+                    { code: "540352", name: "Transferencia de Materia", credits: 4, prereqs: ["540332"] },
+                    { code: "540353", name: "Taller de Integración II", credits: 2, prereqs: ["540333"] },
+                    { code: "523250", name: "Estadística y Probabilidades", credits: 4, prereqs: ["525150", "527150"] },
+                    { code: "580301", name: "Innovación", credits: 3, prereqs: [] },
+                    { code: "204", name: "Complementaria IV", credits: 2, prereqs: [] }
                 ]
             }
         ]
@@ -79,21 +83,22 @@ const malla = [
             {
                 semester: "7º Semestre",
                 courses: [
-                    { code: "DCP401", name: "Dinámica y Control de Procesos", credits: 5, prereqs: ["TM301"], coreqs: ["DRQ301"] },
-                    { code: "LPQ401", name: "Laboratorio de Procesos Químicos", credits: 4, prereqs: ["TM301"], coreqs: ["DRQ301"] },
-                    { code: "OS401", name: "Operaciones de Separación", credits: 5, prereqs: ["TM301"] },
-                    { code: "SOP401", name: "Síntesis y Optimización de Procesos", credits: 5, prereqs: ["DRQ301"] },
-                    { code: "TIN303", name: "Taller de Integración III", credits: 3, prereqs: ["DRQ301"] },
-                    { code: "COM104", name: "Inglés Comunicativo IV", credits: 3, prereqs: ["COM103"] }
+                    { code: "540361", name: "Diseño de Reactores Químicos", credits: 5, prereqs: ["540351"] },
+                    { code: "540362", name: "Dinámica y Control de Procesos", credits: 5, prereqs: ["540352"], coreqs: ["540361"] },
+                    { code: "540363", name: "Laboratorio de Procesos Químicos", credits: 4, prereqs: ["540352"], coreqs: ["540361"] },
+                    { code: "540364", name: "Operaciones de Separación", credits: 4, prereqs: ["540352"] },
+                    { code: "540365", name: "Síntesis y Optimización de Procesos", credits: 5, prereqs: ["540361"] },
+                    { code: "540366", name: "Taller de Integración III", credits: 3, prereqs: ["540361"] }
                 ]
             },
             {
                 semester: "8º Semestre",
                 courses: [
-                    { code: "PROJ501", name: "Proyecto I", credits: 5, prereqs: ["SOP401"] },
-                    { code: "PROJ502", name: "Proyecto II", credits: 5, prereqs: ["PROJ501"] },
-                    { code: "PP501", name: "Práctica Profesional", credits: 5, prereqs: [] },
-                    { code: "MEM501", name: "Memoria de Título", credits: 20, prereqs: [{ type: "memoria" }] }
+                    { code: "540574", name: "Proyecto I", credits: 4, prereqs: ["540365"] },
+                    { code: "540575", name: "Proyecto II", credits: 4, prereqs: ["540574"] },
+                    { code: "540576", name: "Gestión de Riesgos Químicos", credits: 3, prereqs: [] },
+                    { code: "540690", name: "Práctica Profesional", credits: 4, prereqs: [] },
+                    { code: "540695", name: "Memoria de Título", credits: 20, prereqs: [{ type: "memoria" }] }
                 ]
             }
         ]
@@ -104,33 +109,24 @@ const malla = [
             {
                 semester: "9º Semestre",
                 courses: [
-                    { code: "ELC901", name: "Electivo Profesional I", credits: 5, prereqs: [] },
-                    { code: "ELC902", name: "Electivo Profesional II", credits: 5, prereqs: [] },
-                    { code: "ELC903", name: "Electivo Profesional III", credits: 5, prereqs: [] }
+                    { code: "580703", name: "Formulación y Evaluación de Proyectos", credits: 4, prereqs: [] },
+                    { code: "554150", name: "Introducción a la Sustentabilidad en Ingeniería", credits: 3, prereqs: [] },
+                    { code: "500703", name: "Inglés Comunicativo 3 Nivel Básico", credits: 3, prereqs: [] },
+                    { code: "102", name: "Electiva II", credits: 6, prereqs: [] }
                 ]
             },
             {
                 semester: "10º Semestre",
                 courses: [
-                    { code: "ELC904", name: "Electivo Profesional IV", credits: 5, prereqs: [] },
-                    { code: "ELC905", name: "Electivo Profesional V", credits: 5, prereqs: [] },
-                    { code: "ELC906", name: "Electivo Profesional VI", credits: 5, prereqs: [] }
-                ]
-            }
-        ]
-    },
-    {
-        year: "6º Año",
-        semesters: [
-            {
-                semester: "11º Semestre",
-                courses: [
-                    { code: "MEM601", name: "Memoria de Título Avanzada", credits: 20, prereqs: [{ type: "memoria" }] }
+                    { code: "580705", name: "Gestión de Empresas", credits: 3, prereqs: [] },
+                    { code: "500704", name: "Inglés Comunicativo 4 Nivel Básico Alto", credits: 3, prereqs: ["500703"] },
+                    { code: "103", name: "Electiva III", credits: 6, prereqs: [] }
                 ]
             }
         ]
     }
 ];
+
 const mallaContainer = document.getElementById("malla");
 let progress = JSON.parse(localStorage.getItem("mallaProgress")) || {};
 
