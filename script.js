@@ -124,8 +124,21 @@ const malla = [
                 ]
             }
         ]
+    },
+    {
+        year: "6º Año",
+        semesters: [
+            {
+                semester: "11º Semestre",
+                courses: [
+                    { code: "540690", name: "Práctica Profesional", credits: 4, prereqs: [] },
+                    { code: "540695", name: "Memoria de Título", credits: 20, prereqs: [{ type: "memoria" }] }
+                ]
+            }
+        ]
     }
 ];
+
 
 const mallaContainer = document.getElementById("malla");
 let progress = JSON.parse(localStorage.getItem("mallaProgress")) || {};
